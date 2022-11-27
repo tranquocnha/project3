@@ -11,6 +11,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - run :  docker build -t udagram-api-feed ./udagram-api-feed
       - run : docker tag reverseproxy trunghau4869/reverseproxy:v2
       - run : docker tag udagram-api-feed trunghau4869/udagram-api-feed:v7
       - run : docker tag udagram-api-user trunghau4869/udagram-api-user:v4
