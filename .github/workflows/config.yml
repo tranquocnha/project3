@@ -33,10 +33,10 @@ jobs:
             echo " ------- login in to hub--------"
             docker login -u coxmd -p $DOCKERPASS
             echo "-------------- Pushing images to dockerhub-------"
-            docker push coxmd/udagram-api-feed:v1
-            docker push coxmd/udagram-api-user:v1
-            docker push coxmd/udagram-frontend:v1
-            docker push coxmd/udagram-reverseproxy:v1
+            docker push trunghau4869/reverseproxy:v4
+            docker push trunghau4869/udagram-api-feed:v7
+            docker push trunghau4869/udagram-api-user:v4
+            docker push trunghau4869/udagram-frontend:v10
 workflows:
   default:
     jobs:
