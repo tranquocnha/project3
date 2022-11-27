@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - 13
+  - 12
 
 services:
   - docker
@@ -18,14 +18,14 @@ script:
   - docker build -t udagram-frontend ./udagram-frontend
 
   # Tagging
-  - docker tag reverseproxy phat99/reverseproxy:v2
-  - docker tag udagram-api-feed phat99/udagram-api-feed:v7
-  - docker tag udagram-api-user phat99/udagram-api-user:v4
-  - docker tag udagram-frontend phat99/udagram-frontend:v10
+  - docker tag reverseproxy trunghau4869/reverseproxy:v2
+  - docker tag udagram-api-feed trunghau4869/udagram-api-feed:v7
+  - docker tag udagram-api-user trunghau4869/udagram-api-user:v4
+  - docker tag udagram-frontend trunghau4869/udagram-frontend:v10
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push phat99/reverseproxy:v4
-  - docker push phat99/udagram-api-feed:v7
-  - docker push phat99/udagram-api-user:v4
-  - docker push phat99/udagram-frontend:v10
+  - docker push trunghau4869/reverseproxy:v4
+  - docker push trunghau4869/udagram-api-feed:v7
+  - docker push trunghau4869/udagram-api-user:v4
+  - docker push trunghau4869/udagram-frontend:v10
