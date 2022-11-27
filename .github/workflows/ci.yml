@@ -11,68 +11,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Build & Push Reverse Proxy Image to DockerHub
-        run: |
-          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-          docker build -t trunghau4869/reverseproxy:v3 ./udagram-reverseproxy
-          docker push trunghau4869/reverseproxy:v3
-
-  second_job:
-
-    runs-on: ubuntu-latest
-
-
-
-    steps:
-
-      - uses: actions/checkout@v2
-
-      - name: Build & Push Backend User Service Image to DockerHub
-
-        run: |
-
-          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-
-          docker build -t trunghau4869/udagram-api-user:v3 ./udagram-api-user
-
-          docker push trunghau4869/udagram-api-user:v3
-
-  third_job:
-
-    runs-on: ubuntu-latest
-
-
-
-    steps:
-
-      - uses: actions/checkout@v2
-
-      - name: Build & Push Backend Feed Service Image to DockerHub
-
-        run: |
-
-          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-
-          docker build -t trunghau4869/udagram-api-feed:v3 ./udagram-api-feed
-
-          docker push trunghau4869/udagram-api-feed:v3
-
-  forth_job:
-
-    runs-on: ubuntu-latest
-
-
-
-    steps:
-
-      - uses: actions/checkout@v2
-
-      - name: Build & Push Frontend Image to DockerHub
-
-        run: |
-
-          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-
-          docker build -t trunghau4869/udagram-frontend:v7 ./udagram-frontend
-
-          docker push trunghau4869/udagram-frontend:v7
+      - run : docker tag reverseproxy trunghau4869/reverseproxy:v2
+      - run : docker tag udagram-api-feed trunghau4869/udagram-api-feed:v7
+      - run : docker tag udagram-api-user trunghau4869/udagram-api-user:v4
+      - run : docker tag udagram-frontend trunghau4869/udagram-frontend:v10
+      - run : docker push trunghau4869/reverseproxy:v4
+      - run : docker push trunghau4869/udagram-api-feed:v7
+      - run : docker push trunghau4869/udagram-api-user:v4
+      - run : docker push trunghau4869/udagram-frontend:v10
+      - run : docker push trunghau4869/reverseproxy:v1
+      
+      # - run : echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }"--password-stdin       
+   
