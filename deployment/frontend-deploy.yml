@@ -25,13 +25,9 @@ spec:
     metadata:
 
       labels:
-
         app: frontend
-
     spec:
-
       containers:
-
       - name: frontend
         image: trunghau4869/udagram-frontend:v6
         ports:
