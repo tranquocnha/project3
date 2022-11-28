@@ -34,7 +34,7 @@ spec:
 
       - name: backend-user
 
-        image: trunghau4869/udagram-api-user:v1
+        image: trunghau4869/udagram-api-user:v6
 
         ports:
 

@@ -34,7 +34,7 @@ spec:
 
       - name: reverseproxy
 
-        image: trunghau4869/reverseproxy:v1
+        image: trunghau4869/reverseproxy:v6
 
         ports:
 
