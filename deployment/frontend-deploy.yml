@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+  name: reverse
+
+  labels:
+
+    app: frontend
+
+spec:
+
+  replicas: 1
+
+  selector:
+
+    matchLabels:
+
+      app: frontend
+
+  template:
+
+    metadata:
+
+      labels:
+
+        app: frontend
+
+    spec:
+
+      containers:
+
+      - name: frontend
+        image: trunghau4869/udagram-frontend:v1
+        ports:
+        - containerPort: 80
+       
