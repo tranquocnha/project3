@@ -4,7 +4,7 @@ kind: Deployment
 
 metadata:
 
-  name: reverse
+  name: frontend
 
   labels:
 
@@ -31,5 +31,5 @@ spec:
       - name: frontend
         image: trunghau4869/udagram-frontend:v6
         ports:
-        - containerPort: 80
+        - containerPort: 8100
        
