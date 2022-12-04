@@ -31,5 +31,5 @@ spec:
       - name: frontend
         image: trunghau4869/udagram-frontend:v6
         ports:
-        - containerPort: 8100
+        - containerPort: 80
        

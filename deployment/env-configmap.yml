@@ -4,8 +4,8 @@ metadata:
   name: udagram-env
 data:
   AWS_REGION: us-east-1
-  POSTGRES_HOST :  database-3.c6dtc3ezn7cv.us-east-1.rds.amazonaws.com
-  POSTGRES_DB :  postgres
+  POSTGRES_HOST : database-1.c6dtc3ezn7cv.us-east-1.rds.amazonaws.com
+  POSTGRES_DB : postgres
   AWS_BUCKET: nhatq
   AWS_PROFILE: default
   JWT_SECRET: testing
